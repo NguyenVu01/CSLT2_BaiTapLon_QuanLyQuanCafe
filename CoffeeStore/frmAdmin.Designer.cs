@@ -93,14 +93,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.tpTaiKhoan = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.btnCaiLaiMatKhau = new System.Windows.Forms.Button();
             this.panel24 = new System.Windows.Forms.Panel();
             this.txtLoaiTaiKhoan = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -110,7 +104,13 @@
             this.panel26 = new System.Windows.Forms.Panel();
             this.txtTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnCaiLaiMatKhau = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.tcAdmin.SuspendLayout();
             this.tpDoanhThu.SuspendLayout();
             this.panel22.SuspendLayout();
@@ -141,13 +141,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel12.SuspendLayout();
             this.tpTaiKhoan.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel23.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -194,7 +194,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(346, 1);
+            this.button9.Location = new System.Drawing.Point(345, 3);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(89, 40);
             this.button9.TabIndex = 1;
@@ -219,7 +219,7 @@
             // dataGridView5
             // 
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView5.Location = new System.Drawing.Point(-7, 0);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.Size = new System.Drawing.Size(764, 397);
             this.dataGridView5.TabIndex = 0;
@@ -775,69 +775,6 @@
             this.tpTaiKhoan.Text = "Tài khoản";
             this.tpTaiKhoan.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(415, 69);
-            this.panel1.TabIndex = 7;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(312, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(97, 63);
-            this.button10.TabIndex = 3;
-            this.button10.Text = "Xem";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(209, 3);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(97, 63);
-            this.button11.TabIndex = 2;
-            this.button11.Text = "Sửa";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(106, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(97, 63);
-            this.button12.TabIndex = 1;
-            this.button12.Text = "Xóa";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(3, 3);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(97, 63);
-            this.button13.TabIndex = 0;
-            this.button13.Text = "Thêm";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(3, 75);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(415, 378);
-            this.panel2.TabIndex = 8;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(412, 378);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // panel23
             // 
             this.panel23.Controls.Add(this.btnCaiLaiMatKhau);
@@ -848,6 +785,15 @@
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(349, 378);
             this.panel23.TabIndex = 9;
+            // 
+            // btnCaiLaiMatKhau
+            // 
+            this.btnCaiLaiMatKhau.Location = new System.Drawing.Point(243, 219);
+            this.btnCaiLaiMatKhau.Name = "btnCaiLaiMatKhau";
+            this.btnCaiLaiMatKhau.Size = new System.Drawing.Size(94, 50);
+            this.btnCaiLaiMatKhau.TabIndex = 4;
+            this.btnCaiLaiMatKhau.Text = "Reset Password";
+            this.btnCaiLaiMatKhau.UseVisualStyleBackColor = true;
             // 
             // panel24
             // 
@@ -936,14 +882,68 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Tên tài khoản";
             // 
-            // btnCaiLaiMatKhau
+            // panel2
             // 
-            this.btnCaiLaiMatKhau.Location = new System.Drawing.Point(243, 219);
-            this.btnCaiLaiMatKhau.Name = "btnCaiLaiMatKhau";
-            this.btnCaiLaiMatKhau.Size = new System.Drawing.Size(94, 50);
-            this.btnCaiLaiMatKhau.TabIndex = 4;
-            this.btnCaiLaiMatKhau.Text = "Reset Password";
-            this.btnCaiLaiMatKhau.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(3, 75);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(415, 378);
+            this.panel2.TabIndex = 8;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(412, 378);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button10);
+            this.panel1.Controls.Add(this.button11);
+            this.panel1.Controls.Add(this.button12);
+            this.panel1.Controls.Add(this.button13);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(415, 69);
+            this.panel1.TabIndex = 7;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(312, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(97, 63);
+            this.button10.TabIndex = 3;
+            this.button10.Text = "Xem";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(209, 3);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(97, 63);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "Sửa";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(106, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(97, 63);
+            this.button12.TabIndex = 1;
+            this.button12.Text = "Xóa";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(3, 3);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(97, 63);
+            this.button13.TabIndex = 0;
+            this.button13.Text = "Thêm";
+            this.button13.UseVisualStyleBackColor = true;
             // 
             // frmAdmin
             // 
@@ -993,9 +993,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.panel12.ResumeLayout(false);
             this.tpTaiKhoan.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel23.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
@@ -1003,6 +1000,9 @@
             this.panel25.PerformLayout();
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

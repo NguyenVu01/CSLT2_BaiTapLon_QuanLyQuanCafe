@@ -13,3 +13,11 @@ D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmThongTinCaNhan.resources
 D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmAdmin.resources
 D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmMain.resources
 D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmNhanVien.resources
+D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frnMon.resources
+D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmHoaDon.resources
+D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmKhachHang.resources
+D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmTroGiup.resources
+D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmLoaiMon.resources
+D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmNhaCungCap.resources
+D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmBan.resources
+D:\anh trai\CoffeeStore\obj\Debug\CoffeeStore.frmHoaDonNhap.resources

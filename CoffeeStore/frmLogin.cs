@@ -32,9 +32,23 @@ namespace CoffeeStore
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            frmMain f = new frmMain();
-            this.Hide();
-            f.ShowDialog();
+            string userName = txtTenDangNhap.Text;
+            string passWord = txtMatKhau.Text;
+            if(DangNhap(userName, passWord))
+            {
+                frmMain f = new frmMain();
+                this.Hide();
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã nhập sai tên tài khoản hoặc mật khẩu!");
+            }
+        }
+
+        bool DangNhap(string userName, string passWord)
+        {
+            return AccountDAO.Instance.DangNhap(userName, passWord);
         }
     }
 }

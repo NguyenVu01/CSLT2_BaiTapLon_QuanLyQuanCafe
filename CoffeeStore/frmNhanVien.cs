@@ -151,5 +151,25 @@ namespace CoffeeStore
             btnLuu.Enabled = false;
             txtMaNhanVien.Enabled = false;
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (txtTimKiem.Text == "")
+            {
+                MessageBox.Show("Hãy nhập tên nhân viên cần tìm kiếm!!!", "Yêu cầu ...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            sql = "SELECT * FROM NHANVIEN WHERE 1=1";
+            if (txtTimKiem.Text != "")
+                sql = sql + " AND TenNV Like N'%" + txtTimKiem.Text + "%'";
+            tblNhanVien = DAO.LoadDataToTable(sql);
+            if (tblNhanVien.Rows.Count == 0)
+                MessageBox.Show("Không có bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                MessageBox.Show("Có " + tblNhanVien.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            dataGridView.DataSource = tblNhanVien;
+            ResetValues();
+        }
     }
 }
