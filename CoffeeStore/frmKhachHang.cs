@@ -31,7 +31,6 @@ namespace CoffeeStore
             dataGridView.Columns[2].HeaderText = "Địa chỉ";
             dataGridView.Columns[3].HeaderText = "Điểm tích lũy";
             dataGridView.Columns[4].HeaderText = "SĐT";
-
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -157,13 +156,9 @@ namespace CoffeeStore
                 txtMaKhach.Text = "";
                 return;
             }
-            sql = "SET IDENTITY_INSERT KHACHHANG ON";
-            DAO.RunSql(sql);
             sql = "INSERT INTO KHACHHANG(MaKH,TenKH, DiaChi, DiemTichLuy, SDT) VALUES(N'" + txtMaKhach.Text + "',N'" + txtHoTen.Text + "',N'" + txtDiaChi.Text + "',N'" + txtDiemTichLuy.Text + "',N'" + txtSoDienThoai.Text + "')";
             DAO.RunSql(sql);
             Load_DataGridView();
-            sql = "SET IDENTITY_INSERT KHACHHANG OFF";
-            DAO.RunSql(sql);
             ResetValues();
             btnXoa.Enabled = true;
             btnThem.Enabled = true;
@@ -178,8 +173,8 @@ namespace CoffeeStore
             txtMaKhach.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
             txtHoTen.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
             txtDiaChi.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
-            txtSoDienThoai.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
-            txtDiemTichLuy.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
+            txtDiemTichLuy.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
+            txtSoDienThoai.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
         }
 
         private void frmKhachHang_Load(object sender, EventArgs e)
@@ -208,6 +203,11 @@ namespace CoffeeStore
                 MessageBox.Show("Có " + tblKhachHang.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             dataGridView.DataSource = tblKhachHang;
             ResetValues();
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            Load_DataGridView();
         }
     }
 }

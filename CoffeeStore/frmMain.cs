@@ -35,7 +35,6 @@ namespace CoffeeStore
             if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 DAO.Disconnect();
-                Application.Exit();
                 Environment.Exit(0);
             }
         }

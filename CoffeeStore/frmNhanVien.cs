@@ -34,21 +34,22 @@ namespace CoffeeStore
             sql = "SELECT * FROM NhanVien";
             tblNhanVien = DAO.LoadDataToTable(sql);
             dataGridView.DataSource = tblNhanVien;
-            dataGridView.Columns[1].Width = 200;
-            dataGridView.Columns[3].Width = 150;
+            /*            dataGridView.Columns[1].Width = 200;
+                        dataGridView.Columns[3].Width = 150;*/
+            dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
-        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+/*        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaNhanVien.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
             txtHoTen.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
-            dtpNgaySinh.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
+            mskNgaySinh.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
             txtDiaChi.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
-            txtSoDienThoai.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
-            txtHoatDong.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
-            txtBoPhan.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
+            mskSoDienThoai.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
+            cbxHoatDong.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
+            cbxBoPhan.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
             txtLuong.Text = dataGridView.CurrentRow.Cells[7].Value.ToString();
-        }
+        }*/
 
         private void btnDong_Click(object sender, EventArgs e)
         {
@@ -71,11 +72,11 @@ namespace CoffeeStore
         {
             txtMaNhanVien.Text = "";
             txtHoTen.Text = "";
-            dtpNgaySinh.Text = "";
+            mskNgaySinh.Text = "";
             txtDiaChi.Text = "";
-            txtSoDienThoai.Text = "";
-            txtHoatDong.Text = "";
-            txtBoPhan.Text = "";
+            mskSoDienThoai.Text = "";
+            cbxHoatDong.Text = "";
+            cbxBoPhan.Text = "";
             txtLuong.Text = "";
         }
 
@@ -104,8 +105,8 @@ namespace CoffeeStore
             }
             sql = "SET IDENTITY_INSERT NHANVIEN ON";
             DAO.RunSql(sql);
-            sql = "INSERT INTO NhanVien(MaNV,TenNV, NgaySinh, DiaChi, SDT, HoatDong, BoPhan, Luong) VALUES(N'" + txtMaNhanVien.Text + "',N'" + txtHoTen.Text + "',N'" + dtpNgaySinh.Text + "',N'" 
-                + txtDiaChi.Text + "',N'" + txtSoDienThoai.Text + "',N'" + txtHoatDong.Text + "',N'" + txtBoPhan.Text + "', '" + txtLuong.Text + "')";
+            sql = "INSERT INTO NhanVien(MaNV,TenNV, NgaySinh, DiaChi, SDT, HoatDong, BoPhan, Luong) VALUES(N'" + txtMaNhanVien.Text + "',N'" + txtHoTen.Text + "',N'" +mskNgaySinh.Text + "',N'" 
+                + txtDiaChi.Text + "',N'" + mskSoDienThoai.Text + "',N'" + cbxHoatDong.Text + "',N'" + cbxBoPhan.Text + "', '" + txtLuong.Text + "')";
             DAO.RunSql(sql);
             Load_DataGridView();
             sql = "SET IDENTITY_INSERT NHANVIEN OFF";
@@ -134,7 +135,7 @@ namespace CoffeeStore
             }
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                sql = "DELETE NhanVien WHERE MaNhanVien= N'" + txtMaNhanVien.Text + "'";
+                sql = "DELETE NhanVien WHERE MaNV = N'" + txtMaNhanVien.Text + "'";
                 DAO.RunSqlDel(sql);
                 Load_DataGridView();
                 ResetValues();
@@ -170,6 +171,109 @@ namespace CoffeeStore
                 MessageBox.Show("Có " + tblNhanVien.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             dataGridView.DataSource = tblNhanVien;
             ResetValues();
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            Load_DataGridView();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblNhanVien.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtMaNhanVien.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtHoTen.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tên khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtHoTen.Focus();
+                return;
+            }
+            if (txtDiaChi.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDiaChi.Focus();
+                return;
+            }
+            if (mskNgaySinh.Text == "  /  /")
+            {
+                MessageBox.Show("Bạn phải nhập ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                mskNgaySinh.Focus();
+                return;
+            }
+            if (!DAO.IsDate(mskNgaySinh.Text))
+            {
+                MessageBox.Show("Bạn phải nhập lại ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                mskNgaySinh.Text = "";
+                mskNgaySinh.Focus();
+                return;
+            }
+
+            if (mskSoDienThoai.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                mskSoDienThoai.Focus();
+                return;
+            }
+            if (cbxHoatDong.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải chọn hoạt động! 1.Hoạt động, 0.Không hoạt động", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbxHoatDong.Focus();
+                return;
+            }
+            if (cbxBoPhan.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải chọn bộ phận làm việc của nhân viên đó!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbxBoPhan.Focus();
+                return;
+            }
+            sql = "UPDATE NHANVIEN SET  TenNV =N'" + txtHoTen.Text.Trim().ToString() +
+                "', NgaySinh = N'" + txtDiaChi.Text.Trim().ToString() +
+                "', DiaChi = N'" +  mskNgaySinh.Text.Trim().ToString() +
+                "', SDT ='" + mskSoDienThoai.Text.Trim().ToString() +
+                "', HoatDong = N'" + cbxHoatDong.Text +
+                "', BoPhan ='" + cbxBoPhan.Text.Trim().ToString() +
+                "', Luong ='" + txtLuong.Text.Trim().ToString() +
+                "' WHERE MaNV =N'" + txtMaNhanVien.Text + "'";
+            DAO.RunSql(sql);
+            Load_DataGridView();
+            ResetValues();
+            btnBoQua.Enabled = false;
+        }
+
+        private void dataGridView_Click(object sender, EventArgs e)
+        {
+            if (btnThem.Enabled == false)
+            {
+                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaNhanVien.Focus();
+                return;
+            }
+            if (tblNhanVien.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            txtMaNhanVien.Text = dataGridView.CurrentRow.Cells["MaNV"].Value.ToString();
+            txtHoTen.Text = dataGridView.CurrentRow.Cells["TenNV"].Value.ToString();
+            txtDiaChi.Text = dataGridView.CurrentRow.Cells["DiaChi"].Value.ToString();
+            mskSoDienThoai.Text = dataGridView.CurrentRow.Cells["SDT"].Value.ToString();
+            mskNgaySinh.Text = dataGridView.CurrentRow.Cells["NgaySinh"].Value.ToString();
+            txtLuong.Text = dataGridView.CurrentRow.Cells["Luong"].Value.ToString();
+            cbxHoatDong.Text = dataGridView.CurrentRow.Cells["HoatDong"].Value.ToString();
+            cbxBoPhan.Text = dataGridView.CurrentRow.Cells["BoPhan"].Value.ToString();
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnBoQua.Enabled = true;
+
         }
     }
 }

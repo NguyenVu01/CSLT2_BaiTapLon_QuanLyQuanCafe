@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDong = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txtBoPhan = new System.Windows.Forms.TextBox();
+            this.cbxBoPhan = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnBoQua = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txtHoatDong = new System.Windows.Forms.TextBox();
+            this.cbxHoatDong = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -50,10 +51,10 @@
             this.txtLuong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
+            this.mskSoDienThoai = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.mskNgaySinh = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtHoTen = new System.Windows.Forms.TextBox();
@@ -62,10 +63,11 @@
             this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnHienThi = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.toolTipTimKiem = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -84,7 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(372, 20);
+            this.label1.Location = new System.Drawing.Point(365, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(296, 32);
             this.label1.TabIndex = 0;
@@ -119,30 +121,34 @@
             // 
             this.btnDong.AccessibleDescription = "";
             this.btnDong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
+            this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDong.Location = new System.Drawing.Point(773, 151);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(132, 43);
             this.btnDong.TabIndex = 10;
             this.btnDong.Text = "Đóng";
+            this.btnDong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.txtBoPhan);
+            this.panel7.Controls.Add(this.cbxBoPhan);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Location = new System.Drawing.Point(670, 34);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(297, 29);
             this.panel7.TabIndex = 7;
             // 
-            // txtBoPhan
+            // cbxBoPhan
             // 
-            this.txtBoPhan.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoPhan.Location = new System.Drawing.Point(103, 3);
-            this.txtBoPhan.Name = "txtBoPhan";
-            this.txtBoPhan.Size = new System.Drawing.Size(189, 22);
-            this.txtBoPhan.TabIndex = 1;
+            this.cbxBoPhan.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxBoPhan.FormattingEnabled = true;
+            this.cbxBoPhan.Location = new System.Drawing.Point(103, 3);
+            this.cbxBoPhan.Name = "cbxBoPhan";
+            this.cbxBoPhan.Size = new System.Drawing.Size(189, 24);
+            this.cbxBoPhan.TabIndex = 2;
             // 
             // label9
             // 
@@ -158,30 +164,37 @@
             // 
             this.btnBoQua.AccessibleDescription = "";
             this.btnBoQua.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBoQua.Image = ((System.Drawing.Image)(resources.GetObject("btnBoQua.Image")));
+            this.btnBoQua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBoQua.Location = new System.Drawing.Point(635, 151);
             this.btnBoQua.Name = "btnBoQua";
             this.btnBoQua.Size = new System.Drawing.Size(132, 43);
             this.btnBoQua.TabIndex = 9;
             this.btnBoQua.Text = "Bỏ qua";
+            this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBoQua.UseVisualStyleBackColor = true;
             this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.txtHoatDong);
+            this.panel9.Controls.Add(this.cbxHoatDong);
             this.panel9.Controls.Add(this.label11);
             this.panel9.Location = new System.Drawing.Point(670, 69);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(297, 29);
             this.panel9.TabIndex = 5;
             // 
-            // txtHoatDong
+            // cbxHoatDong
             // 
-            this.txtHoatDong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoatDong.Location = new System.Drawing.Point(103, 3);
-            this.txtHoatDong.Name = "txtHoatDong";
-            this.txtHoatDong.Size = new System.Drawing.Size(189, 22);
-            this.txtHoatDong.TabIndex = 1;
+            this.cbxHoatDong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxHoatDong.FormattingEnabled = true;
+            this.cbxHoatDong.Items.AddRange(new object[] {
+            "0",
+            "1"});
+            this.cbxHoatDong.Location = new System.Drawing.Point(103, 2);
+            this.cbxHoatDong.Name = "cbxHoatDong";
+            this.cbxHoatDong.Size = new System.Drawing.Size(189, 24);
+            this.cbxHoatDong.TabIndex = 1;
             // 
             // label11
             // 
@@ -197,11 +210,14 @@
             // 
             this.btnLuu.AccessibleDescription = "";
             this.btnLuu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.Location = new System.Drawing.Point(497, 151);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(132, 43);
             this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu nhân viên";
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -209,22 +225,29 @@
             // 
             this.btnSua.AccessibleDescription = "";
             this.btnSua.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.Location = new System.Drawing.Point(359, 151);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(132, 43);
             this.btnSua.TabIndex = 7;
             this.btnSua.Text = "Sửa nhân viên";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.AccessibleDescription = "";
             this.btnXoa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.Location = new System.Drawing.Point(221, 151);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(132, 43);
             this.btnXoa.TabIndex = 6;
             this.btnXoa.Text = "Xóa nhân viên";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -232,11 +255,14 @@
             // 
             this.btnThem.AccessibleDescription = "";
             this.btnThem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.Location = new System.Drawing.Point(83, 151);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(132, 43);
             this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm nhân viên";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -296,20 +322,21 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txtSoDienThoai);
+            this.panel4.Controls.Add(this.mskSoDienThoai);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(340, 69);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(297, 29);
             this.panel4.TabIndex = 3;
             // 
-            // txtSoDienThoai
+            // mskSoDienThoai
             // 
-            this.txtSoDienThoai.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDienThoai.Location = new System.Drawing.Point(103, 3);
-            this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(189, 22);
-            this.txtSoDienThoai.TabIndex = 1;
+            this.mskSoDienThoai.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskSoDienThoai.Location = new System.Drawing.Point(103, 2);
+            this.mskSoDienThoai.Mask = "(999) 000-0000";
+            this.mskSoDienThoai.Name = "mskSoDienThoai";
+            this.mskSoDienThoai.Size = new System.Drawing.Size(189, 22);
+            this.mskSoDienThoai.TabIndex = 1;
             // 
             // label5
             // 
@@ -323,20 +350,22 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dtpNgaySinh);
+            this.panel3.Controls.Add(this.mskNgaySinh);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(18, 104);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(297, 29);
             this.panel3.TabIndex = 4;
             // 
-            // dtpNgaySinh
+            // mskNgaySinh
             // 
-            this.dtpNgaySinh.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgaySinh.Location = new System.Drawing.Point(103, 3);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(189, 22);
-            this.dtpNgaySinh.TabIndex = 1;
+            this.mskNgaySinh.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskNgaySinh.Location = new System.Drawing.Point(103, 2);
+            this.mskNgaySinh.Mask = "00/00/0000";
+            this.mskNgaySinh.Name = "mskNgaySinh";
+            this.mskNgaySinh.Size = new System.Drawing.Size(189, 25);
+            this.mskNgaySinh.TabIndex = 1;
+            this.mskNgaySinh.ValidatingType = typeof(System.DateTime);
             // 
             // label4
             // 
@@ -404,10 +433,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnHienThi);
             this.groupBox2.Controls.Add(this.dataGridView);
             this.groupBox2.Controls.Add(this.btnTimKiem);
             this.groupBox2.Controls.Add(this.txtTimKiem);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 261);
             this.groupBox2.Name = "groupBox2";
@@ -416,22 +445,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dữ liệu về nhân viên";
             // 
+            // btnHienThi
+            // 
+            this.btnHienThi.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThi.Image")));
+            this.btnHienThi.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHienThi.Location = new System.Drawing.Point(291, 21);
+            this.btnHienThi.Name = "btnHienThi";
+            this.btnHienThi.Size = new System.Drawing.Size(85, 34);
+            this.btnHienThi.TabIndex = 4;
+            this.btnHienThi.Text = "Refresh";
+            this.btnHienThi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHienThi.UseVisualStyleBackColor = false;
+            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
+            // 
             // dataGridView
             // 
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(6, 61);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(987, 272);
             this.dataGridView.TabIndex = 3;
-            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            this.dataGridView.Click += new System.EventHandler(this.dataGridView_Click);
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.Location = new System.Drawing.Point(629, 21);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(85, 34);
             this.btnTimKiem.TabIndex = 2;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -441,15 +488,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(216, 22);
             this.txtTimKiem.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(290, 30);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 16);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tên nhân viên";
+            this.toolTipTimKiem.SetToolTip(this.txtTimKiem, "Hãy nhập tên nhân viên");
             // 
             // frmNhanVien
             // 
@@ -503,10 +542,8 @@
         private System.Windows.Forms.TextBox txtLuong;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtHoTen;
@@ -520,13 +557,16 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox txtBoPhan;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txtHoatDong;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.Button btnHienThi;
+        private System.Windows.Forms.ComboBox cbxHoatDong;
+        private System.Windows.Forms.ComboBox cbxBoPhan;
+        private System.Windows.Forms.ToolTip toolTipTimKiem;
+        private System.Windows.Forms.MaskedTextBox mskNgaySinh;
+        private System.Windows.Forms.MaskedTextBox mskSoDienThoai;
     }
 }
