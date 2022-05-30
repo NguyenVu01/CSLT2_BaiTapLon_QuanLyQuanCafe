@@ -41,9 +41,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.cbxMaBan = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbxMaKhachHang = new System.Windows.Forms.Panel();
-            this.cbxMaKhach = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mskNgayGiao = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -62,15 +59,18 @@
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cbxTrangThai = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel22.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.cbxMaKhachHang.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -149,9 +149,9 @@
             // groupBox1
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.btnDong);
             this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Controls.Add(this.cbxMaKhachHang);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.btnBoQua);
             this.groupBox1.Controls.Add(this.btnLuu);
@@ -190,7 +190,7 @@
             // 
             this.panel4.Controls.Add(this.cbxMaBan);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(18, 205);
+            this.panel4.Location = new System.Drawing.Point(18, 174);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(297, 29);
             this.panel4.TabIndex = 5;
@@ -212,33 +212,6 @@
             this.label5.Size = new System.Drawing.Size(50, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Mã bàn";
-            // 
-            // cbxMaKhachHang
-            // 
-            this.cbxMaKhachHang.Controls.Add(this.cbxMaKhach);
-            this.cbxMaKhachHang.Controls.Add(this.label7);
-            this.cbxMaKhachHang.Location = new System.Drawing.Point(18, 172);
-            this.cbxMaKhachHang.Name = "cbxMaKhachHang";
-            this.cbxMaKhachHang.Size = new System.Drawing.Size(297, 29);
-            this.cbxMaKhachHang.TabIndex = 4;
-            // 
-            // cbxMaKhach
-            // 
-            this.cbxMaKhach.FormattingEnabled = true;
-            this.cbxMaKhach.Location = new System.Drawing.Point(103, 1);
-            this.cbxMaKhach.Name = "cbxMaKhach";
-            this.cbxMaKhach.Size = new System.Drawing.Size(189, 26);
-            this.cbxMaKhach.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Mã khách hàng";
             // 
             // panel1
             // 
@@ -440,6 +413,35 @@
             this.dataGridView.TabIndex = 7;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.cbxTrangThai);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(18, 209);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(297, 29);
+            this.panel2.TabIndex = 6;
+            // 
+            // cbxTrangThai
+            // 
+            this.cbxTrangThai.FormattingEnabled = true;
+            this.cbxTrangThai.Items.AddRange(new object[] {
+            "0"});
+            this.cbxTrangThai.Location = new System.Drawing.Point(103, 1);
+            this.cbxTrangThai.Name = "cbxTrangThai";
+            this.cbxTrangThai.Size = new System.Drawing.Size(189, 26);
+            this.cbxTrangThai.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(5, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Trạng thái";
+            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,8 +461,6 @@
             this.groupBox1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.cbxMaKhachHang.ResumeLayout(false);
-            this.cbxMaKhachHang.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -470,6 +470,8 @@
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,9 +490,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox cbxMaBan;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel cbxMaKhachHang;
-        private System.Windows.Forms.ComboBox cbxMaKhach;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnBoQua;
@@ -510,5 +509,8 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.MaskedTextBox mskNgayDat;
         private System.Windows.Forms.MaskedTextBox mskNgayGiao;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cbxTrangThai;
+        private System.Windows.Forms.Label label6;
     }
 }

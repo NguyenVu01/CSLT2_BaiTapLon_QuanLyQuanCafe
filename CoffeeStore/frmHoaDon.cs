@@ -24,12 +24,10 @@ namespace CoffeeStore
             txtMaHoaDon.Enabled = false;
             btnLuu.Enabled = false;
             btnBoQua.Enabled = false;
-            string sql1 = "SELECT DISTINCT MaNV FROM NHANVIEN";
+            string sql1 = "SELECT DISTINCT MaNV FROM NHANVIEN where MaNV in (6,7)";
             DAO.FillCombo(sql1, cbxMaNhanVien, "MaNV", "MaNV");
-            string sql2 = "SELECT DISTINCT MaKH FROM KHACHHANG ORDER BY MAKH";
-            DAO.FillCombo(sql2, cbxMaKhach, "MaKH", "MaKH");
-            string sql3 = "SELECT DISTINCT MaBan FROM BAN";
-            DAO.FillCombo(sql3, cbxMaBan, "MaBan", "MaBan");
+            string sql2 = "SELECT DISTINCT MaBan FROM BAN";
+            DAO.FillCombo(sql2, cbxMaBan, "MaBan", "MaBan");
             Load_DataGridView();
         }
 
@@ -58,8 +56,8 @@ namespace CoffeeStore
             mskNgayDat.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
             mskNgayGiao.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
             cbxMaNhanVien.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
-            cbxMaKhachHang.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
-            cbxMaBan.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
+            cbxMaBan.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
+            cbxTrangThai.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -80,8 +78,8 @@ namespace CoffeeStore
             mskNgayDat.Text = "";
             mskNgayGiao.Text = "";
             cbxMaNhanVien.Text = "";
-            cbxMaKhach.Text = "";
             cbxMaBan.Text = "";
+            cbxTrangThai.Text = "";
         }
 
         private void btnBoQua_Click(object sender, EventArgs e)
@@ -126,19 +124,13 @@ namespace CoffeeStore
                 cbxMaNhanVien.Focus();
                 return;
             }
-            if (cbxMaKhach.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Bạn phải chọn mã khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbxMaKhach.Focus();
-                return;
-            }
 
             sql = "UPDATE HOADON SET  NgayDat =N'" + mskNgayDat.Text.Trim().ToString() +
                 "', NgayGiao = N'" + mskNgayGiao.Text.Trim().ToString() +
                 "', MaNV ='" + cbxMaNhanVien.Text.Trim().ToString() +
-                "', MaKH ='" + cbxMaKhach.Text.Trim().ToString() +
                 "', MaBan ='" + cbxMaBan.Text.Trim().ToString() +
-                "' WHERE MaKH =N'" + txtMaHoaDon.Text + "'";
+                "', TrangThai ='" + cbxTrangThai.Text.Trim().ToString() +
+                "' WHERE MaHD =N'" + txtMaHoaDon.Text + "'";
             DAO.RunSql(sql);
             Load_DataGridView();
             ResetValues();
@@ -175,12 +167,13 @@ namespace CoffeeStore
                 txtMaHoaDon.Text = "";
                 return;
             }
-            sql = "INSERT INTO HOADON(MaHD,NgayDat, NgayGiao, MaNV, MaKH, MaBan) VALUES(N'" + txtMaHoaDon.Text +
+            sql = "INSERT INTO HOADON(MaHD,NgayDat, NgayGiao, MaNV, MaBan, TrangThai) VALUES(N'" + txtMaHoaDon.Text +
                 "',N'" + mskNgayDat.Text +
                 "',N'" + mskNgayGiao.Text +
                 "',N'" + cbxMaNhanVien.Text +
-                "',N'" + cbxMaKhach.Text +
-                "',N'" + cbxMaBan.Text + "')";
+                "',N'" + cbxMaBan.Text +
+                "',N'" + cbxTrangThai.Text +
+                "')";
 
             DAO.RunSql(sql);
             Load_DataGridView();
